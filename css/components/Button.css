@@ -16,26 +16,4 @@
 
 .Button:hover {
     transform: scale(1.1);
-}.Excel table {
-    border: 1px solid black;
-    margin: 20px;
-}.Logo {
-  background-image: url('images/react-logo.svg');
-  background-size: cover;
-  display: inline-block;
-  height: 50px;
-  vertical-align: middle;
-  width: 50px;
-}.Rating {
-    color: blue;
 }
-.RatingOn {
-    color: red;
-}
-.RatingReadonly {
-    color: gray;
-}html {
-  background: white;
-  font: 16px Arial;
-}
-

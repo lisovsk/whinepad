@@ -1,0 +1,9 @@
+.Rating {
+    color: blue;
+}
+.RatingOn {
+    color: red;
+}
+.RatingReadonly {
+    color: gray;
+}

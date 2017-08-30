@@ -16,23 +16,33 @@ var _Excel = require('./components/Excel');
 
 var _Excel2 = _interopRequireDefault(_Excel);
 
+var _Whinepad = require('./components/Whinepad');
+
+var _Whinepad2 = _interopRequireDefault(_Whinepad);
+
+var _schema = require('./schema');
+
+var _schema2 = _interopRequireDefault(_schema);
+
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
-var headers = localStorage.getItem('headers');
-var data = localStorage.getItem('data');
-if (!headers) {
-  headers = ['Title', 'Year', 'Rating', 'Comments'];
-  data = [['Test', '2015', '3', 'meh']];
+var data = JSON.parse(localStorage.getItem('data'));
+// исходные данные примера, считывание из схемы
+if (!data) {
+  data = {};
+  _schema2.default.forEach(function (item) {
+    return data[item.id] = item.sample;
+  });
+  data = [data];
 }
-
 _reactDom2.default.render(_react2.default.createElement(
   'div',
   null,
   _react2.default.createElement(
-    'h1',
-    null,
+    'div',
+    { className: 'app-header' },
     _react2.default.createElement(_Logo2.default, null),
-    ' Welcome to The App!'
+    'Welcome to Whinepad!'
   ),
-  _react2.default.createElement(_Excel2.default, { headers: headers, initialData: data })
+  _react2.default.createElement(_Whinepad2.default, { schema: _schema2.default, initialData: data })
 ), document.getElementById('pad'));

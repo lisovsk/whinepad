@@ -145,9 +145,9 @@ var Whinepad = function (_Component) {
                         { className: 'WhinepadToolbarSearch' },
                         _react2.default.createElement('input', {
                             placeholder: 'Search...',
-                            onChange: this.search.bind(this),
+                            onChange: this._search.bind(this),
                             onFocus: this._startSearching.bind(this),
-                            onBlur: this.doneSearching.bind(this) })
+                            onBlur: this._doneSearching.bind(this) })
                     )
                 ),
                 _react2.default.createElement(
@@ -156,7 +156,7 @@ var Whinepad = function (_Component) {
                     _react2.default.createElement(_Excel2.default, {
                         schema: this.props.schema,
                         initialData: this.state.data,
-                        onDataChange: this.onExcelDataChange.bind(this) })
+                        onDataChange: this._onExcelDataChange.bind(this) })
                 ),
                 this.state.addnew ? _react2.default.createElement(
                     _Dialog2.default,

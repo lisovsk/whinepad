@@ -86,12 +86,12 @@ class Whinepad extends Component {
                     <div className="WhinepadToolbarSearch">
                         <input
                             placeholder="Search..."
-                            onChange={this.search.bind(this)}
+                            onChange={this._search.bind(this)}
                             onFocus={this
                             ._startSearching
                             .bind(this)} 
                             onBlur={this
-                            .doneSearching
+                            ._doneSearching
                             .bind(this)}/>
                     </div>
                 </div>
@@ -100,7 +100,7 @@ class Whinepad extends Component {
                         schema={this.props.schema}
                         initialData={this.state.data}
                         onDataChange={this
-                        .onExcelDataChange
+                        ._onExcelDataChange
                         .bind(this)}/>
                 </div>
                 {this.state.addnew

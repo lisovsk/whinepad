@@ -11,14 +11,16 @@ let data = JSON.parse(localStorage.getItem('data'));
 // исходные данные примера, считывание из схемы
 if (!data) {
   data = {};
-  schema.forEach(item => data[item.id] = item.sample);
+  schema.forEach(item => (data[item.id] = item.sample));
   data = [data];
 }
 ReactDOM.render(
   <div>
-  <div className="app-header">
-    <Logo/>
-    Welcome to Whinepad!
-  </div>
-  <Whinepad schema={schema} initialData={data}/>
-</div>, document.getElementById('pad'));
+    <div className="app-header">
+      <Logo />
+      Welcome to Whinepad!
+    </div>
+    <Whinepad schema={schema} initialData={data} />
+  </div>,
+  document.getElementById('pad'),
+);

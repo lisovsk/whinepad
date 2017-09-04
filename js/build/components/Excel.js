@@ -43,10 +43,12 @@ var Excel = _react2.default.createClass({
   },
 
   _showEditor: function _showEditor(e) {
-    this.setState({ edit: {
+    this.setState({
+      edit: {
         row: parseInt(e.target.dataset.row, 10),
         cell: e.target.cellIndex
-      } });
+      }
+    });
   },
 
   _save: function _save(e) {
@@ -94,7 +96,7 @@ var Excel = _react2.default.createClass({
     var contents = format === 'json' ? JSON.stringify(this.state.data) : this.state.data.reduce(function (result, row) {
       return result + row.reduce(function (rowresult, cell, idx) {
         return rowresult + '"' + cell.replace(/"/g, '""') + '"' + (idx < row.length - 1 ? ',' : '');
-      }, '') + "\n";
+      }, '') + '\n';
     }, '');
 
     var URL = window.URL || window.webkitURL;
@@ -123,14 +125,12 @@ var Excel = _react2.default.createClass({
       ),
       _react2.default.createElement(
         'a',
-        { onClick: this._download.bind(this, 'json'),
-          href: 'data.json' },
+        { onClick: this._download.bind(this, 'json'), href: 'data.json' },
         'Export JSON'
       ),
       _react2.default.createElement(
         'a',
-        { onClick: this._download.bind(this, 'csv'),
-          href: 'data.csv' },
+        { onClick: this._download.bind(this, 'csv'), href: 'data.csv' },
         'Export CSV'
       )
     );
